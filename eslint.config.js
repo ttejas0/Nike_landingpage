@@ -5,7 +5,9 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist'] },
+  {
+    ignores: ['dist', '.eslintrc.cjs'],
+  },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -17,7 +19,7 @@ export default [
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
+    settings: { react: { version: '18.2' } },  // Updated to match your .eslintrc.cjs setting
     plugins: {
       react,
       'react-hooks': reactHooks,
@@ -33,6 +35,7 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'react/prop-types': 'off',  // Added to match your .eslintrc.cjs rule
     },
   },
 ]
